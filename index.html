@@ -299,8 +299,8 @@
 <section class="section section-bottom-left section-bottom-right" id="pagamento">
   <h3>pagamento via pix</h3>
   <div class="pix-box">
-    <p style="font-size:14px; color:#ffcc88;">de <span style="text-decoration:line-through; opacity:0.6">r$ 49,90</span> por:</p>
-    <p style='font-size:32px; color:#ffe2a8; margin:5px 0 15px 0; font-weight:900;'>r$ 20,00</p>
+    <p style="font-size:14px; color:#ffcc88;">de <span style="text-decoration:line-through; opacity:0.6">R$ 49,90</span> por:</p>
+    <p style='font-size:32px; color:#ffe2a8; margin:5px 0 15px 0; font-weight:900;'>R$ 20,00</p>
     
     <p style="font-size:13px;">chave pix (e-mail):</p>
     <div class="pix-code" id="pixcode">lua.azambuja123gmail.com</div>
@@ -357,7 +357,7 @@ copybtn.onclick = async () => {
 };
 
 const phone = '5548984392507'; 
-const message = encodeURIComponent(`olá! acabei de fazer o pix de r$20,00 para o e-book receitas vinsmoke (chave: ${pix}). aqui está o comprovante:`);
+const message = encodeURIComponent(`olá! acabei de fazer o pix de R$20,00 para o e-book receitas vinsmoke (chave: ${pix}). aqui está o comprovante:`);
 const whatsappurl = `https://wa.me/${phone}?text=${message}`;
 
 sendprooflink.href = whatsappurl;
