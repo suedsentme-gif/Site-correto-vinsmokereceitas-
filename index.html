@@ -205,12 +205,50 @@ footer{
 <div style="max-width:1100px;margin:50px auto;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;">
 
 <div style="border:2px solid #ff7a00;border-radius:18px;padding:15px;display:flex;justify-content:center;">
-  <div style="width:260px;height:460px;border-radius:14px;overflow:hidden;position:relative">
-    <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;color:#fff;text-align:center;padding:20px">
-  <div>
-    <p style="font-size:16px;line-height:1.4">🎬 Vídeo de apresentação</p>
+  <div style="width:260px;height:460px;border-radius:14px;overflow:hidden;position:relative;cursor:pointer" id="videoBox">
+  <iframe
+    id="ytVideo"
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/jTjXJ9xt-kc?playsinline=1&mute=1&controls=1&rel=0"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Overlay de clique -->
+  <div id="videoOverlay" style="
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.4);
+    color:#fff;
+    font-size:14px;
+    font-weight:bold;
+    text-align:center;
+  ">
+    🔊 Toq ue para ativar o som
+  </div
+  </div> <style="font-size:16px;line-height:1.4">🎬 Vídeo de apresentação</p>
     <p style="font-size:14px;color:#ccc;margin-top:10px">O Google Drive bloqueia reprodução direta nesta prévia.<br>Ao publicar o site, o vídeo funcionará normalmente.</p>
     <a href="https://drive.google.com/file/d/1gvu9MrY2KRfezkbKODYBYRs4Xj6rR7tS/view" target="_blank" style="display:inline-block;margin-top:15px;color:#ff7a00;font-weight:bold;text-decoration:none">▶ Assistir vídeo</a>
+<script>
+let somAtivado = false;
+
+document.getElementById('videoBox').addEventListener('click', function () {
+  if (somAtivado) return;
+
+  const iframe = document.getElementById('ytVideo');
+  const srcAtual = iframe.src;
+
+  iframe.src = srcAtual.replace('mute=1', 'mute=0');
+
+  document.getElementById('videoOverlay').style.display = 'none';
+  somAtivado = true;
+});
+</script>
   </div>
 </div>
   </div>
